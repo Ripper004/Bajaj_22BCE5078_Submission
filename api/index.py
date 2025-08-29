@@ -1,9 +1,6 @@
 from flask import Flask, request, jsonify
 from utils import process_array, generate_user_id
 import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 app = Flask(__name__)
 
@@ -30,9 +27,4 @@ def bfhl():
             "sum": "0",
             "concat_string": "",
             "error": str(e)
-        }), 200  
-
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+        }), 200
